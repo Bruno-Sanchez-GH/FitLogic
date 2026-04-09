@@ -1,0 +1,16 @@
+{
+  "name": "fitlogic",
+  "version": "1.0.0",
+  "description": "Backend inicial de FitLogic con Node.js y Express",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
