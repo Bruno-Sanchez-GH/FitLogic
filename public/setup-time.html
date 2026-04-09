@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitLogic | Tiempo</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body data-page="time-step">
+  <main class="shell">
+    <section class="step-card">
+      <p class="step-counter">Paso 1 de 3</p>
+      <h1>¿Cuanto tiempo tenes para entrenar?</h1>
+      <p class="step-text">Elegimos primero el tiempo disponible para usarlo luego al armar la rutina.</p>
+
+      <form id="time-form" class="form-grid">
+        <label>
+          Tiempo en minutos
+          <input type="number" id="time" min="1" placeholder="Ej: 45" required>
+        </label>
+
+        <div class="step-actions">
+          <button type="submit">Siguiente</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>

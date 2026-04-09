@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitLogic | Rutina</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body data-page="routine-result">
+  <main class="shell shell-results">
+    <section class="result-card">
+      <div class="result-header">
+        <div>
+          <p class="eyebrow">Rutina generada</p>
+          <h1>Tu plan del dia</h1>
+        </div>
+        <a class="ghost-link" href="./index.html">Volver al inicio</a>
+      </div>
+
+      <div id="routine-summary" class="summary-grid"></div>
+      <div id="routine-list" class="routine-list"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Ejemplo del modulo de ejercicios</h2>
+      <p class="description">
+        Esta seccion muestra como responde <code>exerciseController</code> cuando se consulta
+        un filtrado de ejemplo desde el frontend.
+      </p>
+
+      <div class="actions">
+        <button id="load-filtered-exercises" type="button">Ver ejercicios filtrados</button>
+        <button id="load-all-exercises" type="button">Ver todos los ejercicios</button>
+      </div>
+
+      <div id="exercise-result" class="result-box">
+        <p>Los resultados del endpoint de ejercicios van a aparecer aca.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>

@@ -1,10 +1,10 @@
-# FitLogic
+﻿# FitLogic
 
-FitLogic es un proyecto backend enfocado en la generacion de rutinas de entrenamiento segun el contexto del usuario, su objetivo de entrenamiento y el tiempo disponible.
+FitLogic es un proyecto centrado en backend para generar rutinas de entrenamiento segun el contexto del usuario, su objetivo y el tiempo disponible.
 
 La version actual se esta construyendo como un proyecto de aprendizaje con Node.js y Express, con foco en fundamentos de backend, arquitectura modular y desarrollo progresivo de funcionalidades.
 
-## Vision del Proyecto
+## Vision del proyecto
 
 La idea de FitLogic es permitir que una persona pueda:
 
@@ -17,9 +17,9 @@ La idea de FitLogic es permitir que una persona pueda:
 
 Las futuras versiones contemplan rutinas guardadas, sistemas de progreso, logros, gamificacion, contenido multimedia de ejercicios y una logica de entrenamiento mas avanzada basada en investigacion y criterios reales de planificacion.
 
-## Estado Actual
+## Estado actual
 
-El proyecto se encuentra en una etapa inicial de arquitectura backend.
+El proyecto se encuentra en una primera version funcional.
 
 Actualmente ya cuenta con:
 
@@ -28,15 +28,17 @@ Actualmente ya cuenta con:
 - validacion inicial para la creacion de rutinas
 - catalogo temporal de ejercicios
 - endpoint de filtrado de ejercicios
+- generacion basica de rutinas custom
+- interfaz frontend multipaso para probar la v1
 
 Actualmente se esta diseñando:
 
-- la logica de generacion de rutinas
+- una logica de generacion de rutinas mas precisa
 - la separacion entre flujo `custom` y flujo `system`
 - el contexto del usuario segun lugar de entrenamiento y equipamiento disponible
 - un filtrado mas inteligente antes de construir la rutina
 
-## Stack Tecnologico
+## Stack tecnologico
 
 - Node.js
 - Express
@@ -48,7 +50,7 @@ Planeado para mas adelante:
 - autenticacion
 - persistencia de rutinas guardadas
 
-## Estructura del Proyecto
+## Estructura del proyecto
 
 ```txt
 fitlogic/
@@ -58,6 +60,14 @@ fitlogic/
 │   ├── exerciseController.js
 │   ├── routineController.js
 │   └── userController.js
+├── public/
+│   ├── index.html
+│   ├── setup-time.html
+│   ├── setup-context.html
+│   ├── setup-muscles.html
+│   ├── routine.html
+│   ├── styles.css
+│   └── app.js
 ├── routes/
 │   ├── exerciseRoutes.js
 │   ├── routineRoutes.js
@@ -72,11 +82,12 @@ El proyecto sigue una estructura modular con Express:
 
 - `server.js` levanta el servidor
 - `app.js` configura la aplicacion y conecta los modulos de rutas
+- `public/` contiene la interfaz frontend de la version 1
 - `routes/` define los endpoints
 - `controllers/` maneja la logica de request y response
 - `data/` funciona actualmente como una fuente de datos temporal en memoria hasta incorporar base de datos
 
-## Endpoints Actuales
+## Endpoints actuales
 
 ### Rutinas
 
@@ -88,6 +99,14 @@ Actualmente el endpoint de rutinas valida:
 - `time`
 - `type`
 - `level`
+- `location`
+- `muscles`
+
+Y en esta version ya puede:
+
+- filtrar ejercicios compatibles
+- generar una rutina custom basica
+- ajustar la seleccion de ejercicios al tiempo disponible
 
 ### Ejercicios
 
@@ -117,7 +136,7 @@ GET /api/exercises/filter?location=casa&level=principiante&trainingFocus=muscula
 
 Este modulo esta preparado de forma base para crecer en futuras iteraciones.
 
-## Direccion del Modelo de Ejercicios
+## Direccion del modelo de ejercicios
 
 FitLogic se esta diseñando sobre una estructura flexible de ejercicios que incluye:
 
@@ -130,7 +149,7 @@ FitLogic se esta diseñando sobre una estructura flexible de ejercicios que incl
 
 Esto permite que el proyecto pueda evolucionar hacia una logica de generacion mas realista, en lugar de depender de listas estaticas de ejercicios.
 
-## Direccion de la Logica del Producto
+## Direccion de la logica del producto
 
 Se estan contemplando dos caminos principales para generar rutinas:
 
@@ -146,11 +165,31 @@ En ambos casos, la idea es que el generador de rutinas:
 - construya despues una rutina que entre dentro del tiempo disponible
 - mas adelante ajuste volumen, series, repeticiones, descansos y progresion
 
+## Version 1
+
+La version actual permite recorrer un flujo simple de aplicacion:
+
+1. portada con boton de inicio
+2. carga del tiempo disponible
+3. definicion de contexto de entrenamiento
+4. seleccion de musculos
+5. generacion y visualizacion de una rutina
+
+Esta primera version ya permite estudiar el flujo completo entre:
+
+- frontend
+- `fetch`
+- backend con Express
+- validacion de datos
+- generacion de respuesta en JSON
+
 ## Roadmap
 
 Corto plazo:
 
 - mejorar la logica de generacion de rutinas
+- ampliar el catalogo de ejercicios
+- mejorar la prioridad entre musculo principal y secundario
 - conectar el filtrado de ejercicios con la construccion de la rutina
 - definir plantillas para sistemas de entrenamiento
 - ampliar el flujo relacionado a usuarios
@@ -170,7 +209,7 @@ Largo plazo:
 - videos y contenido enriquecido para ejercicios
 - mejor logica de prescripcion basada en entrenamiento real
 
-## Ejecucion Local
+## Ejecucion local
 
 ```bash
 npm install
@@ -183,7 +222,6 @@ Servidor local por defecto:
 http://localhost:3000
 ```
 
-## Contexto de Aprendizaje
+## Contexto de aprendizaje
 
 FitLogic tambien esta siendo desarrollado como un proyecto practico de aprendizaje backend. Las decisiones de arquitectura y funcionalidades se estan construyendo progresivamente, priorizando entender la logica detras de cada parte y no solo hacer que la aplicacion funcione.
-"# FitLogic" 

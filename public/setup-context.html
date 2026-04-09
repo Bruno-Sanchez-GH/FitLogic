@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitLogic | Contexto</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body data-page="context-step">
+  <main class="shell">
+    <section class="step-card">
+      <p class="step-counter">Paso 2 de 3</p>
+      <h1>Defini tu contexto</h1>
+      <p class="step-text">Aca definis el enfoque de entrenamiento, tu nivel y el lugar donde entrenas.</p>
+
+      <form id="context-form" class="form-grid">
+        <label>
+          Tipo de entrenamiento
+          <select id="type" required>
+            <option value="">Seleccionar</option>
+            <option value="musculacion">Musculacion</option>
+            <option value="fuerza">Fuerza</option>
+            <option value="cardio">Cardio</option>
+          </select>
+        </label>
+
+        <label>
+          Nivel
+          <select id="level" required>
+            <option value="">Seleccionar</option>
+            <option value="principiante">Principiante</option>
+            <option value="intermedio">Intermedio</option>
+            <option value="avanzado">Avanzado</option>
+          </select>
+        </label>
+
+        <label>
+          Lugar de entrenamiento
+          <select id="location" required>
+            <option value="">Seleccionar</option>
+            <option value="casa">Casa</option>
+            <option value="gym">Gym</option>
+            <option value="plaza">Plaza</option>
+          </select>
+        </label>
+
+        <div class="step-actions">
+          <a class="ghost-link" href="./setup-time.html">Volver</a>
+          <button type="submit">Siguiente</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>

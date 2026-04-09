@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitLogic | Musculos</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body data-page="muscles-step">
+  <main class="shell">
+    <section class="step-card">
+      <p class="step-counter">Paso 3 de 3</p>
+      <h1>¿Que musculos queres entrenar?</h1>
+      <p class="step-text">Selecciona uno o varios musculos. El backend intentara construir la rutina usando esas elecciones.</p>
+
+      <form id="muscles-form" class="form-grid">
+        <fieldset class="muscles-grid">
+          <legend>Musculos</legend>
+
+          <label><input type="checkbox" name="muscles" value="pecho"> Pecho</label>
+          <label><input type="checkbox" name="muscles" value="triceps"> Triceps</label>
+          <label><input type="checkbox" name="muscles" value="hombros"> Hombros</label>
+          <label><input type="checkbox" name="muscles" value="espalda"> Espalda</label>
+          <label><input type="checkbox" name="muscles" value="biceps"> Biceps</label>
+          <label><input type="checkbox" name="muscles" value="cuadriceps"> Cuadriceps</label>
+          <label><input type="checkbox" name="muscles" value="gluteos"> Gluteos</label>
+          <label><input type="checkbox" name="muscles" value="isquiotibiales"> Isquiotibiales</label>
+          <label><input type="checkbox" name="muscles" value="abdominales"> Abdominales</label>
+        </fieldset>
+
+        <div id="submit-message" class="inline-message"></div>
+
+        <div class="step-actions">
+          <a class="ghost-link" href="./setup-context.html">Volver</a>
+          <button type="submit">Generar rutina</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
